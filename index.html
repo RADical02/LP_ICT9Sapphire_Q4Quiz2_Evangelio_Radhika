@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZ 2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"; rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+   body {
+        background-color: beige;
+        text-align: center;
+        }
+    
+    .container {
+        background-color: rgb(237, 184, 198);
+        border: 1px solid rgb(104, 30, 50);
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(73, 24, 47, 0.356);
+        margin-bottom: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 10px;
+        }
+
+    button {
+        display: block;
+        margin: 10px auto;
+        padding: 10px 20px;
+        color: rgb(241, 195, 207);
+        background-color: rgb(104, 30, 50);
+        border: none;
+        border-radius: 5px;
+    }
+
+    .input-box {
+            background: #e3e3e3;
+            text-align: right;
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+</style>
+</head>
+<body>
+
+<div class="container">
+        <h1>Score Analyzer</h1>
+        <details ontoggle="message1()">
+            <summary>
+                <u>Click Me</u>
+                <br>
+                <i id="message"></i>
+            </summary>
+        </details>
+</div>
+<br><br>
+<div class="container">
+    <h3>SCIENCE</h3>
+    <input type="number" id="num1" class="form-control input-box" placeholder=" ">
+<br><br>
+    <h3>MATH</h3>
+    <input type="number" id="num2" class="form-control input-box" placeholder=" ">
+<br><br>
+    <h3>ENGLISH</h3>
+    <input type="number" id="num3" class="form-control input-box" placeholder=" ">
+<br><br>
+    <button type="button" onclick="skibidi()">Generate!</button>
+<br><br>
+    <kbd id="sfinal">Your Average Is:</kbd>
+    <br>
+    <kbd id="result"></kbd>
+
+
+</div>
+
+    <script>
+        function message1(){
+            document.getElementById("message").innerHTML = "Enter your grades in the following subjects";
+        }
+
+        function skibidi() {
+            let s1 = Number(document.getElementById("num1").value);
+            let s2 = Number(document.getElementById("num2").value);
+            let s3 = Number(document.getElementById("num3").value)
+            let sfinal = (s1+s2+s3)/3
+            let ss = document.getElementById("sfinal").innerHTML = Math.round(sfinal);
+        }
+
+    switch (ss){
+        case (sfinal>=94):
+            sfinal = "Excellent";
+            break;
+
+        case (sfinal>=87):
+            sfinal = "Above Satisfactory";
+            break;
+
+        case (sfinal>=80):
+            sfinal = "Satisfactory";
+            break;
+        
+        case (sfinal>=75):
+            sfinal = "Needs Improvement";
+            break;
+        
+        case (sfinal>=70):
+            sfinal = "Poor";
+            break;
+
+        default:
+            sfinal = "Invalid Input! Please enter a valid number";
+    
+    }
+
+
+    </script>
+    
+</body>
+</html>
